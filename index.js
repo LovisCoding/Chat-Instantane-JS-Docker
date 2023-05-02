@@ -2,19 +2,39 @@ const app = require ('express')();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
-app.get('/', (req,res) => {
-	res.sendFile(`${__dirname}/public/index.html`)
+let nbPersonne = 0;
+var count = 0;
+
+app.get('/', (req,res) => 
+{
+	res.sendFile(`${__dirname}/index.html`)
 })
 
-io.on('connection',(socket) => {
+app.get('/style.css', (req,res) => 
+{
+	res.sendFile(`${__dirname}/style.css`)
+})
+
+
+io.on('connection',(socket) => 
+{
 	console.log('Un utilisateur s\'est connecté');
-	
-	socket.on('chat message', (msg) => {
+	io.sockets.emit('message', { count: count });
+	socket.on('disconnect', () => 
+	{
+		console.log('Un utilisateur s\'est déconnecté');
+		io.sockets.emit('message', { count: count });
+	});
+	socket.on('chat message', (msg) => 
+	{
 		io.emit('chat message', msg);
 	});
+	
+
 });
 
 
-server.listen(3000, () => {
+server.listen(3000, () => 
+{
 	console.log('Ecoute sur le port 3000')
 })
