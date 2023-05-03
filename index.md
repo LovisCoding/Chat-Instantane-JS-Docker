@@ -19,3 +19,58 @@ Les fontionnalités principales auxquelles nous avons pensés pendant notre proj
 - Un règlement afin d'assurer le vivre ensemble sur le chat.
 - Des sanctions en cas de non respect du règlement
 
+
+
+
+**Instructions pour lancer notre application**
+
+- Nous vérifions que docker est installé :
+```shell
+docker --version
+```
+
+- Nous clonons le référentiel :
+ ```shell
+git clone git@github.com:juanluck/exempleDockerfile.git
+```
+
+- Ensuite nous utilisons la commande 'cd' pour aller au référentiel :
+```shell
+cd exempleDockerfile
+```
+
+- Nous construisons l'image décrite dans dockerfile avec docker build : 
+```shell
+docker build -t <nom-de-l'image> .
+```
+
+- Après ceci nous lançons le serveur web :
+```shell
+docker run -d -p 8080:80 <nom-de-l'image>
+```
+
+- On vérifie que l'application est en cours d'exécution. Pour ce faire, ouvrez un navigateur et tapez 
+```
+localhost:8080
+```
+
+- Nous vérifions que le conteneur associé est actif :
+```shell
+docker ps
+```
+
+- La sortie de ```docker ps``` doit être similaire à :
+```shell
+CONTAINER ID   IMAGE     COMMAND                     CREATED          STATUS          PORTS                                             NAMES
+712013aaacbc   dchat     &quot;node index.js&quot;   33 seconds ago   Up 32 seconds   0.0.0.0:8080-&gt;8080/tcp, :::8080-&gt;8080/tcp   hungry_bohr
+```
+
+- Pour finir, nous arrêtons le conteneur avec la commande suivante (les dernièrs chiffres sont le code de hachage affiché par docker ps):
+```shell
+docker stop 712013aaacbc
+```
+
+- Si nous souhaitons supprimer le conteneur, on peut taper :
+```shell
+docker rm b8f8f406b03c
+```
