@@ -31,12 +31,12 @@ docker --version
 
 - Nous clonons le référentiel :
  ```shell
-git clone git@github.com:juanluck/exempleDockerfile.git
+git clone git@github.com:LovisTheG/docker-sae203.git
 ```
 
 - Ensuite nous utilisons la commande 'cd' pour aller au référentiel :
 ```shell
-cd exempleDockerfile
+cd docker-sae203
 ```
 
 - Nous construisons l'image décrite dans dockerfile avec docker build : 
