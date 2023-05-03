@@ -1,9 +1,11 @@
 body{
 	font-family: "Arial"; 
-	background:  #FFCC5D;
+	background-image: url('images/bkgrnd.jpg');
 }
 
-
+header{
+	border: none;
+}
 
 pre {
 	padding: 20px;
