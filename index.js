@@ -20,9 +20,9 @@ app.get('/images/test.jpg', (req,res) =>
 {
 	res.sendFile(`${__dirname}/images/test.jpg`)
 })
-app.get('/images/chat.png', (req,res) => 
+app.get('/images/icon.ico', (req,res) => 
 {
-	res.sendFile(`${__dirname}/images/chat.png`)
+	res.sendFile(`${__dirname}/images/icon.ico`)
 })
 
 io.on('connection',(socket) => 
