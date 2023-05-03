@@ -6,3 +6,6 @@
 ### Compte rendu du projet réseau 
 
 
+Nous avons choisis comme projet la création d'un serveur permettant de chatter en ligne avec d'autres utilisateurs.
+
+Pour ceci nous avons utilisé plusieurs langage de programmation pour y arriver dont JavaScript, HTML 5 et CSS 3. Certain de ces langages nous ont forcés à faire des recherches personnelles pour apprendre à le comprendre et l'utiliser.
