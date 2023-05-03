@@ -2,9 +2,6 @@ const app = require ('express')();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
-let nbPersonne = 0;
-var count = 0;
-
 app.get('/', (req,res) => 
 {
 	res.sendFile(`${__dirname}/index.html`)
@@ -15,15 +12,25 @@ app.get('/style.css', (req,res) =>
 	res.sendFile(`${__dirname}/style.css`)
 })
 
+app.get('/images/bkgrnd.jpg', (req,res) => 
+{
+	res.sendFile(`${__dirname}/images/bkgrnd.jpg`)
+})
+app.get('/images/test.jpg', (req,res) => 
+{
+	res.sendFile(`${__dirname}/images/test.jpg`)
+})
+app.get('/images/chat.png', (req,res) => 
+{
+	res.sendFile(`${__dirname}/images/chat.png`)
+})
 
 io.on('connection',(socket) => 
 {
 	console.log('Un utilisateur s\'est connecté');
-	io.sockets.emit('message', { count: count });
 	socket.on('disconnect', () => 
 	{
 		console.log('Un utilisateur s\'est déconnecté');
-		io.sockets.emit('message', { count: count });
 	});
 	socket.on('chat message', (msg) => 
 	{
@@ -34,7 +41,7 @@ io.on('connection',(socket) =>
 });
 
 
-server.listen(80, () => 
+server.listen(8080, () => 
 {
-	console.log('Ecoute sur le port 80')
+	console.log('Ecoute sur le port 8080')
 })

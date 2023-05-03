@@ -1,6 +1,6 @@
 body{
 	font-family: "Arial"; 
-	background-image: url('images/bkgrnd.jpg');
+	background-image: url('/images/bkgrnd.jpg');
 }
 
 header{

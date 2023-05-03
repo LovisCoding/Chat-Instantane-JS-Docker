@@ -10,7 +10,7 @@ RUN apt update && \
     apt install -y nodejs
 
 # Copiez tous les fichiers nécessaires dans l'image Docker
-COPY . /app
+COPY . /app 
 
 # Définissez le répertoire de travail
 WORKDIR /app
@@ -19,7 +19,7 @@ WORKDIR /app
 RUN npm install
 
 # Exposez le port sur lequel votre application écoute
-EXPOSE 80
+EXPOSE 8080
 
-# Démarrez votre application avec la commande npm start
+# Démarrez votre application avec la commande node index.js
 CMD ["node", "index.js"]
