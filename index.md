@@ -39,6 +39,11 @@ git clone git@github.com:LovisTheG/docker-sae203.git
 cd docker-sae203
 ```
 
+- SI la branche de travail n'est pas la bonne, nous changeons de branche de travail :
+```shell
+git checkout <nom-de-la-branche>
+```
+
 - Nous construisons l'image décrite dans dockerfile avec docker build : 
 ```shell
 docker build -t <nom-de-l'image> .
@@ -46,7 +51,7 @@ docker build -t <nom-de-l'image> .
 
 - Après ceci nous lançons le serveur web :
 ```shell
-docker run -d -p 8080:80 <nom-de-l'image>
+docker run -d -p 8080:8080 <nom-de-l'image>
 ```
 
 - On vérifie que l'application est en cours d'exécution. Pour ce faire, ouvrez un navigateur et tapez 
