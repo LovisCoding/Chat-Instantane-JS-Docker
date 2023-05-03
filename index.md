@@ -16,3 +16,5 @@ Les fontionnalités principales auxquelles nous avons pensés pendant notre proj
 - un login pour s'identifier à l'entrée du site
 - un système de chat avec un message notifiant les personnes se connectant
 - une partie de la page listant les personnes connectées, cependant à cause de la restriction de temps aucunes de nos recherches ont abouties
+- Un règlement afin d'assurer le vivre ensemble sur le chat.
+- Des sanctions en cas de non respect du règlement.
