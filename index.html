@@ -59,7 +59,7 @@
 
 	<div class="div2" id="chat-container">
 		
-		<pre class="sortie_mes"></pre>
+		<pre class="sortie_mes" id="scroll"></pre>
 		
 		<form>
 			
@@ -97,6 +97,8 @@
 				{
 					socket.emit("chat message", username + ": " + message);
 					$("#msg").val("");
+					var element = document.getElementById("scroll");
+    				element.scrollTop = element.scrollHeight;
 				}
 				return false;
 			});
@@ -105,6 +107,8 @@
 			socket.on('chat message', function (msg) 
 			{
 				$(".sortie_mes").append($("<p>").text(msg));
+				var element = document.getElementById("scroll");
+    			element.scrollTop = element.scrollHeight;
 			});
 			// Envoyer un message lorsque l'utilisateur quitte la chat room
 			window.addEventListener("beforeunload", function () 
