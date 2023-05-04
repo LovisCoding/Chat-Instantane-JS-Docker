@@ -70,7 +70,7 @@ docker ps
 - La sortie de ```docker ps``` doit être similaire à :
 ```shell
 CONTAINER ID   IMAGE     COMMAND                     CREATED          STATUS          PORTS                                             NAMES
-712013aaacbc   dchat     &quot;node index.js&quot;   33 seconds ago   Up 32 seconds   0.0.0.0:8080-&gt;8080/tcp, :::8080-&gt;8080/tcp   hungry_bohr
+712013aaacbc   dchat     node index.js               33 seconds ago   Up 32 seconds   0.0.0.0:8080-&gt;8080/tcp, :::8080-&gt;8080/tcp   hungry_bohr
 ```
 
 - Pour finir, nous arrêtons le conteneur avec la commande suivante (les derniers chiffres sont le code de hachage affiché par docker ps):
