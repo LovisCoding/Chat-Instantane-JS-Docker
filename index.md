@@ -44,7 +44,7 @@ cd docker-sae203
 
 - SI la branche de travail n'est pas la bonne, nous changeons de branche de travail :
 ```shell
-git checkout gh-pages
+git checkout master
 ```
 
 - Nous construisons l'image décrite dans dockerfile avec docker build : 
