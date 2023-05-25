@@ -80,5 +80,5 @@ docker stop 712013aaacbc
 
 - Si nous souhaitons supprimer le conteneur, on peut taper :
 ```shell
-docker rm b8f8f406b03c
+docker rm 712013aaacbc
 ```
